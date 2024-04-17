@@ -21,7 +21,6 @@ describe('Business User Scenarios', () => {
             // Verify that matches names are visible
             cy.get('.sp-c-fixture__team--time-home').invoke('text').should('not.be.empty')
             cy.get('.sp-c-fixture__team--time-away').invoke('text').should('not.be.empty')
-
             }
         });
     });
