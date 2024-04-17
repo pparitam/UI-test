@@ -1,15 +1,14 @@
 /// <reference types="cypress" />
-import pageNavigation from "./POM/pageNavigation";
-import search from "./POM/search";
+import PageNavigation from "./POM/pageNavigation";
+import Search from "./POM/search";
 
 describe("Articles related to Sports", () => {
     beforeEach(() => {
-        //pageNavigation.toScorenFixturePage()
+        PageNavigation.toScorenFixturePage();
     })
     it("To validate articles on Sports", () => {
-        pageNavigation.toScorenFixturePage()
-        search.sportsArticles("Sports")
-        search.firstArticleHeading()
-        search.lastArticleHeading()
+        Search.sportsArticles("Sports");
+        Search.firstArticleHeading();
+        Search.lastArticleHeading();
     })
 })
