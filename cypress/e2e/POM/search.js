@@ -1,11 +1,11 @@
 
-var headerSearch = '[role="search"] a';
-var searchField = '#searchInput';
+var headerSearch = 'div[role="search"]';
+var searchField = 'input#searchInput';
 var searchResult = ".e42f8510.ssrcss-1un9fz5-WrapWithWidth > ul[role='list']";
 var articleTitle = "li .ssrcss-its5xf-PromoLink span";
-var autoSearchField = '[class="sp-c-search"] [role="search"]';
-var autoSearchResult = '[id="search-results"]';
-var autoSerachValue = '[class="sp-c-search__result-item"]';
+var autoSearchField = 'input#searchInput';
+var autoSearchResult = '[id="suggestions"]';
+var autoSerachValue = '.ssrcss-pisokp-StyledLi.e1dvrc4m3';
 var autoSearchListingPage = '.sp-c-fixture__wrapper'
 
 class Search {
@@ -36,6 +36,7 @@ class Search {
 
   autoSearch(text) {
     cy.get(autoSearchField).type(text).then(() => {
+      cy.wait(200)
       cy.get(autoSearchResult).should('exist');
     })
   }
