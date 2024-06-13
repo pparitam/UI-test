@@ -7,8 +7,8 @@ describe("AutoSearch", () => {
         PageNavigation.toScorenFixturePage();
     })
     it("To validate AutoSearch Functionality", () => {
-       Search.autoSearch('AC Milan');
-       Search.validateAutosearchTextis('AC Milan');
-       Search.validateResultPageContains('AC Milan')
+       Search.autoSearch('Football');
+       Search.validateAutosearchTextis('Football');
+       Search.validateResultPageContains('Football')
     })
 })

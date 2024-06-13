@@ -1,10 +1,9 @@
-var headerSearch = '[role="search"] a';
-var searchField = '#searchInput';
+var headerSearch = '[role="search"]';
 var searchResult = ".e42f8510.ssrcss-1un9fz5-WrapWithWidth > ul[role='list']";
 var articleTitle = "li .ssrcss-its5xf-PromoLink span";
-var autoSearchField = '[class="sp-c-search"] [role="search"]';
-var autoSearchResult = '[id="search-results"]';
-var autoSerachValue = '[class="sp-c-search__result-item"]';
+var autoSearchField = '#searchInput';
+var autoSearchResult = '[id="suggestions"]';
+var autoSerachValue = '[class=" ssrcss-pisokp-StyledLi e1dvrc4m3"]';
 var autoSearchListingPage = '.sp-c-fixture__wrapper'
 
 class Search {
@@ -47,7 +46,7 @@ class Search {
 
   validateResultPageContains(text) {
     cy.get(autoSerachValue).then(($el) => {
-      cy.wrap($el).eq(0).click()
+      cy.wrap($el).eq(0).click({force: true})
     })
     cy.get(autoSearchListingPage).contains(text)
   }

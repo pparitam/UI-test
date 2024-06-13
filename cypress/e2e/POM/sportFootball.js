@@ -1,4 +1,4 @@
-var headingText = '.gs-c-promo-heading h1';
+var headingText = '[id="main-heading"]';
 class SportFootball {
     validateURLText(text) {
         cy.url().then(currentURL => {

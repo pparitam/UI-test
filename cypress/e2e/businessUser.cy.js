@@ -8,19 +8,23 @@ describe('Business User Scenarios', () => {
     it('As a business user, I would like to make a record of all teams which are playing today', () => {
         cy.get('body').then($body => {
             // If the element doesn't exist, then print no matches today
-            if (!$body.find('.sp-c-fixture__number.sp-c-fixture__number--time').empty()) {
+            if (!$body.find(`.ssrcss-uizd8o-StyledTime`).empty()) {
                 cy.log('No matches today');
             } else {
             // If matches available then print log to check the matches list
-                cy.get('.sp-c-fixture__number.sp-c-fixture__number--time').then($matchesToday => {
+                cy.get('.ssrcss-uizd8o-StyledTime').invoke('show').then($matchesToday => {
                     if ($matchesToday.length > 0) {
                         const noOfMatch = $matchesToday.length;
                         cy.log(`Please check the list of Today's ${noOfMatch} matches`)
                     }
                 })
             // Verify that matches names are visible
-            cy.get('.sp-c-fixture__team--time-home').invoke('text').should('not.be.empty')
-            cy.get('.sp-c-fixture__team--time-away').invoke('text').should('not.be.empty')
+            cy.get('[class="ssrcss-15urrud-StyledHeadToHeadWrapper e64wp3e1"]').should('not.be.empty').then(ele=>{
+                cy.get(ele).find('[class="visually-hidden ssrcss-1f39n02-VisuallyHidden e16en2lz0"]').invoke('text').then(headTeam=>{
+                    cy.log('-->'+headTeam +'/n')
+                })
+            })
+            
             }
         });
     });

@@ -1,5 +1,5 @@
-var showHideScoresbutton = '[class="gs-o-bullet__text sp-c-football-scores-button__text"]';
-var score = '[class="gel-layout gel-layout--center qa-player-action-container"]';
+var showHideScoresbutton = '.ssrcss-1kvs5az-AlignRight > .ssrcss-1y6d8b7-Button';
+var score = '[class="ssrcss-7kpa5o-StyledUl e1rfo1x0"]';
 class Score {
 
     showHideScores (text) {
